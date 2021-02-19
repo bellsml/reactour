@@ -182,7 +182,7 @@ class Tour extends Component {
 
     if (node) {
       const cb = () => stepCallback(node)
-      this.calculateNode(node, step, cb)
+      if (!this.props.controledPosition) this.calculateNode(node, step, cb)
     } else {
       this.setState(setNodeState(null, step, this.helper.current), stepCallback)
 
@@ -382,6 +382,7 @@ class Tour extends Component {
       CustomHelper,
       disableFocusLock,
       highlightedBorder,
+      controledPosition
     } = this.props
 
     const {
@@ -409,10 +410,12 @@ class Tour extends Component {
           <ReactourResizeObserver
             step={steps[current]}
             refresh={() => this.recalculateNode(steps[current])}
+            disabled={controledPosition}
           />
           <ReactourMutationObserver
             step={steps[current]}
             refresh={() => this.recalculateNode(steps[current])}
+            disabled={controledPosition}
           />
           <SvgMask
             onClick={this.maskClickHandler}

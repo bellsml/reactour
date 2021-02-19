@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 
-export default ({ step, refresh }) => {
+export default ({ step, refresh, disabled }) => {
   const [mutationsCounter, setMutationsCounter] = useState(0)
 
   // only use to notify main logic below
   // that a resizeObservable has been added to DOM (or removed from it)
   useEffect(() => {
-    if (!step.resizeObservables) {
+    if (!step.resizeObservables || disabled) {
       return
     }
 

@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 
-export default ({ step, refresh }) => {
+export default ({ step, refresh, disabled }) => {
   useEffect(() => {
-    if (!step.mutationObservables) {
+    if (!step.mutationObservables || disabled) {
       return
     }
 

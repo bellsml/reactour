@@ -417,6 +417,13 @@ Type: `bool`
 
 Default: `false`
 
+#### controledPosition
+
+> Disable auto position of _Helper_ component.
+
+Type: `bool`
+
+Default: `false`
 
 ## FAQ
 

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 
 export const propTypes = {
+  controledPosition: PropTypes.bool,
   disableFocusLock: PropTypes.bool,
   badgeContent: PropTypes.func,
   highlightedMaskClassName: PropTypes.string,
@@ -65,6 +66,7 @@ export const propTypes = {
 }
 
 export const defaultProps = {
+  controledPosition: false,
   disableFocusLock: false,
   showNavigation: true,
   showNavigationNumber: true,
